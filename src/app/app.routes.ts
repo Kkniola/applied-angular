@@ -12,6 +12,13 @@ export const routes: Routes = [
     component: DashboardComponent,
   },
   {
+    path: 'developer-news',
+    loadChildren: () =>
+      import('../developer-news/developer-news.routes').then(
+        (d) => d.DEVELOPER_NEWS_ROUTES,
+      ),
+  },
+  {
     path: 'demos',
     loadChildren: () =>
       import('../demos/demos.routes').then((d) => d.DEMO_ROUTES),
